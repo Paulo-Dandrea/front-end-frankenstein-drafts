@@ -1,0 +1,4 @@
+src/assets/animations
+src/**/*.mdx
+src/**/*.md
+src/**/*.json
