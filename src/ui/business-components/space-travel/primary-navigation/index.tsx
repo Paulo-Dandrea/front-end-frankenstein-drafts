@@ -1,41 +1,62 @@
 import Link from 'next/link'
-import { Flex } from '~/ui/components/utils/flex'
-import { PrimaryNav } from './style'
+import { PrimaryUL } from './style'
+import { useRouter } from 'next/router'
+
+const navItems = [
+  {
+    name: 'Home',
+    href: '',
+    index: '00'
+  },
+  {
+    name: 'Destination',
+    href: '/destination',
+    index: '01'
+  },
+  {
+    name: 'Crew',
+    href: '/crew',
+    index: '02'
+  },
+  {
+    name: 'Technology',
+    href: '/technology',
+    index: '03'
+  }
+]
 
 const PrimaryNavigation = () => {
+  const { pathname } = useRouter()
+
+  function isTargetPageActive(targetUrl: string) {
+    if (pathname === targetUrl) {
+      return 'active'
+    }
+    return ''
+  }
+
+  function Item({ name, href, index }: any) {
+    const actualHref = `/space-travel${href}`
+    return (
+      <Link href={actualHref} key={index}>
+        <li className={isTargetPageActive(actualHref)}>
+          <a>
+            <span>{index}</span>
+            {name}
+          </a>
+        </li>
+      </Link>
+    )
+  }
+
   return (
-    <PrimaryNav>
-      <Flex gap='1rem'>
-        <li>
-          <Link href="/space-travel">
-            <a>
-              <span>00</span>Home
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/space-travel/destination">
-            <a>
-              <span>01</span>Destination
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/space-travel/crew">
-            <a>
-              <span>02</span>Crew
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/space-travel/technology">
-            <a>
-              <span>03</span>Technology
-            </a>
-          </Link>
-        </li>
-      </Flex>
-    </PrimaryNav>
+    <nav>
+      <PrimaryUL>
+        {navItems.map(item => (
+          <Item key={item.index} {...item} />
+        ))}
+      </PrimaryUL>
+    </nav>
   )
 }
 
