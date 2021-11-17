@@ -1,14 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
-import colors from './colors'
-
 export const SpaceTravelStyle = createGlobalStyle`
 /* ------------------- */
 /* Custom properties   */
 /* ------------------- */
 
 :root {
-    /* colors */
+    /* colour */
     --clr-dark: 230 35% 7%;
     --clr-light: 231 77% 90%;
     --clr-white: 0 0% 100%;
@@ -144,7 +142,7 @@ select {
   border: 0;
 }
 
-/* colors */
+/* colour */
 
 .bg-dark { background-color: hsl( var(--clr-dark) );}
 .bg-accent { background-color: hsl( var(--clr-light) );}
@@ -200,7 +198,7 @@ select {
 /* Compontents         */
 /* ------------------- */
 
-.large-button {
+/* .large-button {
     position: relative;
     z-index: 1;
     display: grid;
@@ -227,7 +225,7 @@ select {
 .large-button:focus::after {
     opacity: 1;
     transform: scale(1.5);
-}
+} */
 
 .primary-navigation {
     --gap: 8rem;

@@ -29,7 +29,12 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en-US">
-        <Head />
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           {/* Just in case that I want to attach a modal outside */}

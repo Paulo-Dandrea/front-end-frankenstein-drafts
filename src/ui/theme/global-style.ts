@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-import colors from './colors'
+import colour from './colour'
 
 export const GlobalStyle = createGlobalStyle`
  /* @font-face {
@@ -48,15 +48,15 @@ export const GlobalStyle = createGlobalStyle`
 
   :root{
     line-height: 1.5;
-    color: ${colors.darkGray};
+    color: ${colour.darkGray};
   }
 
   body {
-    background:  ${colors.lightGray};
+    background:  ${colour.lightGray};
   }
 
   .debug > * {
-    border: 2px solid ${colors.danger};
+    border: 2px solid ${colour.danger};
   } */
 
   `
