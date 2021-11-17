@@ -1,14 +1,21 @@
-import Head from 'next/head'
-import PrimaryNavigation from '../primary-navigation'
-import Link from 'next/link'
 import { ReactNode } from 'react'
+
+import Image from 'next/image'
+import Head from 'next/head'
+import Link from 'next/link'
+
+import PrimaryNavigation from '../../primary-navigation'
+
 import { SpaceTravelStyle } from '~/ui/theme/space-travel-style'
+
+import logo from 'public/space-travel/assets/shared/logo.svg'
+import { Header } from './style'
 
 interface LayoutProps {
   children?: ReactNode
 }
 
-const Layout = (props: LayoutProps) => {
+const MainLayout = (props: LayoutProps) => {
   const appTitle = `Space-Travel`
 
   return (
@@ -21,11 +28,17 @@ const Layout = (props: LayoutProps) => {
 
       <SpaceTravelStyle />
 
+      <Header>
+        <div>
+          <Image src={logo} width="100px" height="100px" alt="Space tourism logo" />
+        </div>
+        <PrimaryNavigation />
+      </Header>
+
       <div>{props.children}</div>
-      <PrimaryNavigation />
       <Link href="/">Home from Home</Link>
     </div>
   )
 }
 
-export default Layout
+export default MainLayout
