@@ -1,4 +1,4 @@
-import MainLayour from '~/ui/business-components/space-travel/layout/main-layout'
+import MainLayout from '~/ui/business-components/space-travel/layout/main-layout'
 import { ContentContainer as GlobalContentContainer } from '~/ui/containers/container'
 
 import styled from 'styled-components'
@@ -14,12 +14,25 @@ const TextContainer = styled.div`
   h1 {
     font-family: 'Barlow Condensed', sans-serif;
     letter-spacing: ${({ theme }) => theme.space.medium};
-    font-size: ${({ theme }) => theme.fontSizes.xxLarge};
+    font-size: ${({ theme }) => theme.fontSizes.mobile.fs700};
+
+    @media (min-width: 53em) {
+      font-size: ${({ theme }) => theme.fontSizes.tablet.fs700};
+    }
+    @media (min-width: 45em) {
+      font-size: ${({ theme }) => theme.fontSizes.desktop.fs700};
+    }
     color: ${({ theme }) => theme.colour.spaceTravel.accent};
   }
   span {
     font-family: 'Bellefair', serif;
-    font-size: ${({ theme }) => theme.fontSizes.xHuge};
+    font-size: ${({ theme }) => theme.fontSizes.mobile.fs900};
+    @media (min-width: 53em) {
+      font-size: ${({ theme }) => theme.fontSizes.tablet.fs900};
+    }
+    @media (min-width: 45em) {
+      font-size: ${({ theme }) => theme.fontSizes.desktop.fs900};
+    }
     color: ${({ theme }) => theme.colour.white};
   }
 `
@@ -27,61 +40,27 @@ const TextContainer = styled.div`
 const SpaceTravel = () => {
   return (
     <>
-      <MainLayour>
-        <GlobalContentContainer>
-          <TextContainer>
-            <GridContainer>
-              <div>
-                <h1>
-                  So, you want to travel to<span>Space</span>
-                </h1>
-                <p>
-                  Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover
-                  kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world
-                  experience!
-                </p>
-              </div>
-              <div>
-                <LargeButton>Explore</LargeButton>
-              </div>
-            </GridContainer>
-          </TextContainer>
-        </GlobalContentContainer>
-      </MainLayour>
-
-      {/* <nav>
-        <ul className="primary-navigation underline-indicators flex">
-        <li className="active">
-        <a className="uppercase text-white letter-spacing-2" href="#">
-        <span>00</span>Home
-        </a>
-        </li>
-        <li>
-        <a className="uppercase text-white letter-spacing-2" href="#">
-        <span>01</span>Destination
-        </a>
-        </li>
-        <li>
-        <a className="uppercase text-white letter-spacing-2" href="#">
-        <span>02</span>Crew
-        </a>
-        </li>
-        <li>
-        <a className="uppercase text-white letter-spacing-2" href="#">
-        <span>03</span>Technology
-        </a>
-        </li>
-        </ul>
-      </nav> */}
+      <MainLayout>
+        <TextContainer>
+          <GridContainer>
+            <div>
+              <h1>
+                So, you want to travel to<span>Space</span>
+              </h1>
+              <p>
+                Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover
+                kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world
+                experience!
+              </p>
+            </div>
+            <div>
+              <LargeButton>Explore</LargeButton>
+            </div>
+          </GridContainer>
+        </TextContainer>
+      </MainLayout>
     </>
   )
 }
 
 export default SpaceTravel
-
-// 00 Home
-// 01 Destination
-// 02 Crew
-// 03 Technology
-
-// Explore

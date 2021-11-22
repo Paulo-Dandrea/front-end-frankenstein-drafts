@@ -1,13 +1,13 @@
 import PrimaryNavigation from '~/ui/business-components/space-travel/primary-navigation'
-import Layout from '~/ui/business-components/space-travel/layout'
+import MainLayout from '~/ui/business-components/space-travel/layout/main-layout'
 
 const Crew = () => {
   return (
     <>
-    <Layout>
+    <MainLayout>
 
         
-    </Layout>
+    </MainLayout>
       {/* <PrimaryNavigation /> */}
     </>
   )

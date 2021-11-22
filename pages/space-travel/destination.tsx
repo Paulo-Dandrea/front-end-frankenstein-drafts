@@ -1,11 +1,11 @@
-import Layout from '~/ui/business-components/space-travel/layout'
+import MainLayout from '~/ui/business-components/space-travel/layout/main-layout'
 
 const Destination = () => {
   return (
     <>
-      <Layout>
+      <MainLayout>
 
-      </Layout>
+      </MainLayout>
       {/* <PrimaryNavigation /> */}
     </>
   )

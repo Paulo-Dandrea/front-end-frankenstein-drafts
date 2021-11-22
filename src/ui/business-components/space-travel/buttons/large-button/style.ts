@@ -2,10 +2,16 @@ import styled from 'styled-components'
 
 export const LargeButton = styled.a`
   text-transform: uppercase;
-  color: ${({theme}) => theme.colour.dark};
-  background-color: ${({theme}) => theme.colour.white};
-  font-size: ${({theme}) => theme.fontSizes.xLarge};
-  font-family: "Bellefair", serif;
+  color: ${({ theme }) => theme.colour.dark};
+  background-color: ${({ theme }) => theme.colour.white};
+  font-size: ${({ theme }) => theme.fontSizes.mobile.fs600};
+  @media (min-width: 53em) {
+    font-size: ${({ theme }) => theme.fontSizes.tablet.fs600};
+  }
+  @media (min-width: 45em) {
+    font-size: ${({ theme }) => theme.fontSizes.desktop.fs600};
+  }
+  font-family: 'Bellefair', serif;
 
   position: relative;
   z-index: 1;
@@ -22,7 +28,7 @@ export const LargeButton = styled.a`
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: ${({theme}) => theme.colour.white};
+    background: ${({ theme }) => theme.colour.white};
     border-radius: 50%;
     opacity: 0;
     transition: opacity 500ms linear, transform 750ms ease-in-out;

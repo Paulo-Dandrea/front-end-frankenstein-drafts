@@ -9,17 +9,19 @@ import PrimaryNavigation from '../../primary-navigation'
 import { SpaceTravelStyle } from '~/ui/theme/space-travel-style'
 
 import logo from 'public/space-travel/assets/shared/logo.svg'
-import { Header } from './style'
+import { Header, Layout } from './style'
 
 interface LayoutProps {
   children?: ReactNode
 }
 
+
+
 const MainLayout = (props: LayoutProps) => {
   const appTitle = `Space-Travel`
 
   return (
-    <div>
+    <Layout>
       <Head>
         <title>{appTitle}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,9 +37,9 @@ const MainLayout = (props: LayoutProps) => {
         <PrimaryNavigation />
       </Header>
 
-      <div>{props.children}</div>
-      <Link href="/">Home from Home</Link>
-    </div>
+      <div className='all-children'>{props.children}</div>
+      {/* <Link href="/">Home from Home</Link> */}
+    </Layout>
   )
 }
 
