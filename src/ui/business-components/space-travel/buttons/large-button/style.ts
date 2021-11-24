@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
-export const LargeButton = styled.a`
+export const LargeButton = styled.button`
   text-transform: uppercase;
   color: ${({ theme }) => theme.colour.dark};
   background-color: ${({ theme }) => theme.colour.white};
-  font-size: ${({ theme }) => theme.fontSizes.mobile.fs600};
-  @media (min-width: 53em) {
+  font-size: ${({ theme }) => theme.fontSizes.tablet.fs600};
+  /* @media (min-width: 53em) {
     font-size: ${({ theme }) => theme.fontSizes.tablet.fs600};
   }
   @media (min-width: 45em) {
     font-size: ${({ theme }) => theme.fontSizes.desktop.fs600};
-  }
-  font-family: 'Bellefair', serif;
+  } */
+  font-family: ${({ theme }) => theme.fontFamily.spaceTravel.serif};
 
   position: relative;
   z-index: 1;

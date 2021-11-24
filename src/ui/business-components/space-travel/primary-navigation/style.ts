@@ -8,7 +8,8 @@ export const PrimaryUL = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: ${({ theme }) => theme.fontFamily.spaceTravel.sansCond};
+
 
   * {
     color: ${({ theme }) => theme.colour.white};

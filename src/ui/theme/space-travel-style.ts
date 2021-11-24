@@ -12,14 +12,14 @@ export const SpaceTravelStyle = createGlobalStyle`
     --clr-white: 0 0% 100%;
     
     /* font-sizes */
-    --fs-900: 5rem;
+    /* --fs-900: clamp(5rem, 7vw + 1rem, 9.375rem);
     --fs-800: 3.5rem;
     --fs-700: 1.5rem;
     --fs-600: 1rem;
     --fs-500: 1.75rem;
     --fs-400: 0.9375rem;
     --fs-300: 1rem;
-    --fs-200: 0.875rem;
+    --fs-200: 0.875rem; */
     
     /* font-families */
     --ff-serif: "Bellefair", serif;
@@ -29,24 +29,24 @@ export const SpaceTravelStyle = createGlobalStyle`
 
 @media (min-width: 35em) {
     :root {
-        --fs-900: 9.375rem;
+        /* --fs-900: 9.375rem;
         --fs-800: 5rem;
         --fs-700: 2.5rem;
         --fs-600: 1.5rem;
-        --fs-400: 1rem;
+        --fs-400: 1rem; */
     }
 }
 
 @media (min-width: 45em) {
     :root {
         /* font-sizes */
-        --fs-800: 6.25rem;
+        /* --fs-800: 6.25rem;
         --fs-700: 3.5rem;
         --fs-600: 2rem;
         --fs-500: 1.75rem;
         --fs-400: 1.125rem;
         --fs-300: 1rem;
-        --fs-200: 0.875rem;
+        --fs-200: 0.875rem; */
     }
 }
 
@@ -225,36 +225,8 @@ select {
 /* Compontents         */
 /* ------------------- */
 
-/* .large-button {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    place-items: center;
-    padding: 0 2em;
-    border-radius: 50%;
-    aspect-ratio: 1;
-    text-decoration: none;
-}
 
-.large-button::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: hsl( var(--clr-white) / .1);
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 500ms linear, transform 750ms ease-in-out;
-}
- 
-.large-button:hover::after,
-.large-button:focus::after {
-    opacity: 1;
-    transform: scale(1.5);
-} */
-
-.primary-navigation {
+/* .primary-navigation {
     --gap: 8rem;
     --underline-gap: 2rem;
     list-style: none;
@@ -269,7 +241,7 @@ select {
 .primary-navigation a > span {
     font-weight: 700;
     margin-right: .5em;
-}
+} */
 
 .underline-indicators > * {
     cursor: pointer;
