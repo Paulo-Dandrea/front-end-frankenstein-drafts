@@ -2,13 +2,13 @@ import MainLayout from '~/ui/business-components/space-travel/layout/main-layout
 
 import { LargeButton } from '~/ui/business-components/space-travel/buttons/large-button/style'
 import { GridContainerHome } from '~/ui/business-components/space-travel/layout/main-layout/grid-container'
-import { HomeTextContainer } from '~/ui/business-components/space-travel/layout/home-layout'
+import { TextContainerHome } from '~/ui/business-components/space-travel/layout/home-layout'
 
 const SpaceTravel = () => {
   return (
     <>
       <MainLayout>
-        <HomeTextContainer>
+        <TextContainerHome>
           <GridContainerHome>
             <div>
               <h1>
@@ -21,10 +21,11 @@ const SpaceTravel = () => {
               </p>
             </div>
             <div>
-              <LargeButton>Explore</LargeButton>
+              {/* TODO: I've Learned that any styled component element can render 'as' another */}
+              <LargeButton as="a">Explore</LargeButton>
             </div>
           </GridContainerHome>
-        </HomeTextContainer>
+        </TextContainerHome>
       </MainLayout>
     </>
   )

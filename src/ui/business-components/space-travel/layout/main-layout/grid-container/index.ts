@@ -1,8 +1,8 @@
 import styled from 'styled-components'
+import { Grid } from '~/ui/components/utils/grid'
 
-export const GridContainer = styled.div`
+export const GridContainer = styled(Grid)`
   border: 5px solid limegreen;
-  display: grid;
   padding-inline: 1rem;
   place-content: center;
   place-items: center;
