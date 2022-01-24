@@ -33,7 +33,7 @@ const MainLayout = (props: LayoutProps) => {
         <div>
           <Image src={logo} width="100px" height="100px" alt="Space tourism logo" />
         </div>
-        {/* <PrimaryNavigation /> */}
+        <PrimaryNavigation />
       </Header>
 
       <div className="all-children">{props.children}</div>
