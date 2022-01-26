@@ -21,7 +21,6 @@ const SpaceTravel = () => {
               </p>
             </div>
             <div>
-              {/* TODO: I've Learned that any styled component element can render 'as' another */}
               <LargeButton as="a">Explore</LargeButton>
             </div>
           </GridContainerHome>
