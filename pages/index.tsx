@@ -13,6 +13,9 @@ const Home: NextPage = () => {
         <Link href="/space-travel">
           <a>Space Travel</a>
         </Link>
+        <Link href="/d3-firebase">
+          <a>D3 Firebase</a>
+        </Link>
       </nav>
 
       <div className='debug'>
