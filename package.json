@@ -34,7 +34,8 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^23.0.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0"
+    "stylelint-processor-styled-components": "^1.10.0",
+    "usehooks-ts": "^2.2.2"
   },
   "devDependencies": {
     "@types/node": "16.11.7",

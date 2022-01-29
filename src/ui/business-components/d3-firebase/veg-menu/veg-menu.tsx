@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import * as d3 from 'd3'
+import { useInterval } from 'usehooks-ts'
 
 interface VegDish {
   name: string
@@ -17,19 +18,20 @@ export const VegMenu = () => {
 
   const d3svg = useRef(null)
 
-  console.log(data)
-
   useEffect(() => {
-    axios.get('./api/for-d3-project/entries').then(wtf => {
-      console.log({ wtf })
-      setData(wtf.data)
+    axios.get('./api/for-d3-project/entries', {}).then(newData => {
+      if (data !== newData.data) setData(newData.data)
     })
   }, [])
 
+  // react-query for refetching from time to time. The above approach
+
   useEffect(() => {
     if (data && d3svg.current) {
-      const svg = d3
-        .select('.veg-canvas')
+      console.log(data)
+      let svg = d3
+        .select(d3svg.current)
+
         .append('svg')
         .attr('width', 600)
         .attr('height', 600)
@@ -62,6 +64,9 @@ export const VegMenu = () => {
       // join the data to circs
       const rects = graph.selectAll('rect').data(data)
 
+      // remove unwanted rects
+      rects.exit().remove()
+
       // append the enter selection to the DOM
       rects
         .enter()
@@ -69,14 +74,14 @@ export const VegMenu = () => {
         .attr('width', x.bandwidth)
         .attr('height', d => graphHeight - y(d.orders))
         .attr('y', d => y(d.orders))
-        .attr('fill', 'orange')
         .attr('x', d => x(d.name))
+        .attr('fill', 'orange')
 
       // create and call the axes
       const xAxis = d3.axisBottom(x)
       const yAxis = d3
         .axisLeft(y)
-        .ticks(20)
+        .ticks(3)
         .tickFormat(d => d + ' orders')
 
       xAxisGroup.call(xAxis)
@@ -86,7 +91,7 @@ export const VegMenu = () => {
         .selectAll('text')
         .attr('transform', 'rotate(-40)')
         .attr('text-anchor', 'end')
-      // })
+        .attr('fill', 'blue')
     }
   }, [data])
 
@@ -100,3 +105,8 @@ export const VegMenu = () => {
     ></svg>
   )
 }
+
+// TODO:check how to update data without creating new svgs
+
+// Should I focus in d3+react first? I think so.
+// The firebase part is slowing me down with something that I don't want right now. Maybe is better to use that youtube video.
