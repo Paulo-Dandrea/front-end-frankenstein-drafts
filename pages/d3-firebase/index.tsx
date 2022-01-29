@@ -1,18 +1,11 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { VegMenu } from '~/ui/business-components/d3-firebase'
 
 const D3Firebase = () => {
-  const [data, setData] = useState([])
-  useEffect(() => {
-    axios.get('./api/for-d3-project/entries').then(data => {
-      console.log({ data: data.data.entriesData })
-      setData(data.data.entriesData)
-    })
-  }, [])
-
-  console.log('rendering')
-
-  return <>{data && data.map(item => <h1>{item?.name}</h1>)}</>
+  return (
+    <>
+      <VegMenu />
+    </>
+  )
 }
 
 export default D3Firebase

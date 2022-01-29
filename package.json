@@ -12,11 +12,13 @@
     "@firebase/firestore-types": "^2.5.0",
     "@rebass/forms": "^4.0.6",
     "@stylelint/postcss-css-in-js": "^0.37.2",
+    "@types/d3": "^7.1.0",
     "@types/rebass": "^4.0.10",
     "@types/rebass__forms": "^4.0.6",
     "@types/styled-components": "^5.1.15",
     "axios": "^0.25.0",
     "babel-plugin-styled-components": "^1.13.3",
+    "d3": "^7.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",
     "firebase": "^9.6.4",
@@ -32,7 +34,8 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^23.0.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0"
+    "stylelint-processor-styled-components": "^1.10.0",
+    "usehooks-ts": "^2.2.2"
   },
   "devDependencies": {
     "@types/node": "16.11.7",

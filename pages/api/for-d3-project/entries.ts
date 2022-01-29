@@ -7,7 +7,7 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
     const entriesData = entries.docs.map(entry => ({
       ...entry.data()
     }))
-    res.status(200).json({ entriesData })
+    res.status(200).json(entriesData)
   } catch (e) {
     res.status(400).end()
   }
