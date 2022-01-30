@@ -15,7 +15,7 @@ interface Color {
   'valores hex RGB': string
 }
 
-export const Colors = () => {
+export const ColorsRadialBurst = () => {
   const [data, setData] = useState<Color[] | null>(null)
 
   const pieArc = arc().innerRadius(0).outerRadius(width)

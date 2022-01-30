@@ -1,1 +1,1 @@
-export { Colors } from './colors'
+export { ColorsRadialBurst as Colors } from './colors-radial-burst'
