@@ -16,7 +16,12 @@ const Home: NextPage = () => {
         <Link href="/d3-firebase">
           <a>D3 Firebase</a>
         </Link>
+
+        <Link href="/d3-react-basics">
+          <a>D3 React Basics</a>
+        </Link>
       </nav>
+
 
       <div className='debug'>
         <Title> The confidence to show me to the world. </Title>

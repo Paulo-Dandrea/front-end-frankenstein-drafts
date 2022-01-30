@@ -9,5 +9,3 @@ const D3Firebase = () => {
 }
 
 export default D3Firebase
-
-// TODO: make a service + react query
