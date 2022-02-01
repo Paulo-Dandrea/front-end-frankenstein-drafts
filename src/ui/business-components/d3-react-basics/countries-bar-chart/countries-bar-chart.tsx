@@ -1,4 +1,4 @@
-import { format, max, ScaleBand, scaleBand, ScaleLinear, scaleLinear } from 'd3'
+import { format, max, scaleBand, scaleLinear } from 'd3'
 
 import { useD3CSVData } from '~/ui/hooks/d3-react'
 
