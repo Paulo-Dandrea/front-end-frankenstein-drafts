@@ -23,7 +23,6 @@ export const ColorsRadialBurst = () => {
 
   useEffect(() => {
     csv(URL).then(data => {
-      //   console.log(data)
       setData(data)
     })
   }, [])
