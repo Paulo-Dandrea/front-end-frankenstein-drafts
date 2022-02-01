@@ -23,7 +23,11 @@ export const GlobalStyle = createGlobalStyle`
     fill: '#6BBBA1'
   }
 
-  
+  .axis-label {
+    font-size: 2.5em;
+    fill: ${colour.sunlightDataViz.textMain};
+
+  }  
 
 
 

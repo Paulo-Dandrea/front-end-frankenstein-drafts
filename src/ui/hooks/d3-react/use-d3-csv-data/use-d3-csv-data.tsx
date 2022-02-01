@@ -7,7 +7,7 @@ export const useD3CSVData = (url: string) => {
   useEffect(() => {
     const row = (d: any) => ({
       country: d.Country,
-      population: +d['2020']
+      population: +d['2020'] * 1000
     })
 
     csv(url, row).then(data => {

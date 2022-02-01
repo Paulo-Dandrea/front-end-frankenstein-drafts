@@ -2,10 +2,12 @@ import { ScaleLinear } from 'd3'
 
 export const AxisBottom = ({
   xScale,
-  innerHeight
+  innerHeight,
+  tickFormat
 }: {
   xScale: ScaleLinear<number, number>
   innerHeight: number
+  tickFormat: (d: any) => string
 }) => {
   return (
     <>
@@ -17,7 +19,7 @@ export const AxisBottom = ({
         >
           <line y2={innerHeight} />
           <text style={{ textAnchor: 'middle' }} dy=".71em" y={innerHeight + 3}>
-            {tickValue}
+            {tickFormat(tickValue)}
           </text>
         </g>
       ))}
