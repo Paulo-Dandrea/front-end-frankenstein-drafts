@@ -1,10 +1,15 @@
-import { Colors, CountriesBarChart } from '~/ui/business-components/d3-react-basics'
+import {
+  Colors,
+  CountriesBarChart,
+  IrisScatterPlot
+} from '~/ui/business-components/d3-react-basics'
 
 const D3ReactBasics = () => {
   return (
     <>
-      <Colors />
+      <IrisScatterPlot />
       <CountriesBarChart />
+      <Colors />
     </>
   )
 }

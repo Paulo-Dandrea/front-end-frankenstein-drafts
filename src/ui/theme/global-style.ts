@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .mark {
-    fill: '#6BBBA1'
+    fill: #6BBBA1
   }
 
   .axis-label {

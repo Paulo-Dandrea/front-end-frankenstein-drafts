@@ -18,7 +18,13 @@ const innerWidth = width - margin.left - margin.right
 const innerHeight = height - margin.top - margin.bottom
 
 export const CountriesBarChart = () => {
-  const data = useD3CSVData(BIG_COUNTRIES_URL)
+  
+  const transformRow = (d: any) => ({
+    country: d.Country,
+    population: +d['2020'] * 1000
+  })
+
+  const data = useD3CSVData(BIG_COUNTRIES_URL, transformRow)?.slice(0, 10)
 
   if (!data) return <pre>Loading Countries...</pre>
 
