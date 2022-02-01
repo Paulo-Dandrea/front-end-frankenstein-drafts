@@ -3,6 +3,30 @@ import { createGlobalStyle } from 'styled-components'
 import colour from './colour'
 
 export const GlobalStyle = createGlobalStyle`
+
+  .tick {
+
+    font-family: 'Zen Old Mincho', serif;
+
+
+    line {
+    stroke: ${colour.sunlightDataViz.lineGreyAccent};
+    }
+
+    text {
+      fill: ${colour.sunlightDataViz.textMain};
+    }
+
+  }
+
+  .mark {
+    fill: '#6BBBA1'
+  }
+
+  
+
+
+
  /* @font-face {
     font-family: "Sharon";
     font-weight: 400;

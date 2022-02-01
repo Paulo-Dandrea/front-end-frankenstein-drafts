@@ -8,9 +8,19 @@ let blackGrey = {
 
 let ui = {
   spaceTravel: {
-    accent: '#d2d8f9',
+    accent: '#d2d8f9'
   },
   danger: '#ff0000'
 }
 
-export default { ...blackGrey, ...ui }
+let sunlightDataViz = {
+  background: '##EFECEA',
+  backGroundLightAccent: '#F5F3F2',
+  backGroundDarkAccent: '##E5E2E0',
+  textMain: '#635F5D',
+  textLight: '#8E8883',
+  lineWhite: '#FFFFFF',
+  lineGreyAccent: '#C0C0BB'
+}
+
+export default { ...blackGrey, ...ui, sunlightDataViz }
