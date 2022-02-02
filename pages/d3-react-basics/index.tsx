@@ -2,13 +2,13 @@ import {
   Colors,
   CountriesBarChart,
   IrisScatterPlot,
-  Timestamp
+  LineChartTemperature,
 } from '~/ui/business-components/d3-react-basics'
 
 const D3ReactBasics = () => {
   return (
     <>
-      <Timestamp />
+      <LineChartTemperature />
       <IrisScatterPlot />
       <CountriesBarChart />
       <Colors />

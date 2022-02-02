@@ -1,4 +1,4 @@
-import { ScaleLinear } from 'd3'
+import { ScaleLinear, line, curveNatural } from 'd3'
 
 export const Marks = ({
   data,
@@ -17,11 +17,17 @@ export const Marks = ({
   toolTipFormat?: (d: any) => string
   circleRadius?: number
 }) => (
-  <>
+  <g className="marks">
+    <path
+      d={line()
+        .x(d => xScale(xValue(d)))
+        .y(d => yScale(yValue(d)))
+        .curve(curveNatural)(data)}
+    />
     {data.map(d => (
-      <circle className="mark" cx={xScale(xValue(d))} cy={yScale(yValue(d))} r={circleRadius}>
+      <circle cx={xScale(xValue(d))} cy={yScale(yValue(d))} r={circleRadius}>
         <title>{toolTipFormat(xValue(d))}</title>
       </circle>
     ))}
-  </>
+  </g>
 )

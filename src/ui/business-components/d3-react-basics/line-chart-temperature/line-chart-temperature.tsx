@@ -20,12 +20,11 @@ interface TemperatureByWeek {
   timestamp: string | number | Date
 }
 
-export const Timestamp = () => {
+export const LineChartTemperature = () => {
   const transformData = (d: TemperatureByWeek) => ({
     ...d,
     temperature: +d.temperature,
     timestamp: new Date(d.timestamp)
-    // timestamp: new Date(d.timestamp)
   })
 
   const data = useD3CSVData(WEEK_TEMPERATURE_URL, transformData) || null
@@ -42,7 +41,7 @@ export const Timestamp = () => {
 
   const xScale = scaleTime().domain(extent(data, xValue)).range([0, innerWidth]).nice()
 
-  const yScale = scaleLinear().domain(extent(data, yValue)).range([innerHeight, 0 ])
+  const yScale = scaleLinear().domain(extent(data, yValue)).range([innerHeight, 0 ]).nice()
 
   return (
     <svg width={width} height={height}>
@@ -60,7 +59,7 @@ export const Timestamp = () => {
         >
           {yAxisLabel}
         </text>
-        <AxisLeft yScale={yScale} innerWidth={innerWidth} tickOffset={12} />{' '}
+        <AxisLeft yScale={yScale} innerWidth={innerWidth} tickOffset={7} />{' '}
         <text
           className="axis-label"
           x={innerWidth / 2}
@@ -75,7 +74,7 @@ export const Timestamp = () => {
           yScale={yScale}
           xValue={xValue}
           yValue={yValue}
-          circleRadius={8}
+          circleRadius={4}
           toolTipFormat={xAxisTickFormat}
         />
       </g>

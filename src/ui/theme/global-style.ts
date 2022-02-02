@@ -23,6 +23,23 @@ export const GlobalStyle = createGlobalStyle`
     fill: #6BBBA1
   }
 
+
+  .marks  {
+    path {
+    fill: none;
+    stroke: #F6B656;
+    stroke-width: 5px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    }
+
+    circle {
+      fill:#F6B656;
+
+    }
+  }
+  
+
   .axis-label {
     font-size: 2.5em;
     fill: ${colour.sunlightDataViz.textMain};
