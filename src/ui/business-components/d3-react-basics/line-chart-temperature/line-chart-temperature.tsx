@@ -1,5 +1,5 @@
-import { extent, format, scaleLinear } from 'd3'
-import { IRIS_URL } from '~/lib/constants'
+import { extent, format, scaleLinear, scaleTime, timeFormat } from 'd3'
+import { WEEK_TEMPERATURE_URL } from '~/lib/constants'
 import { useD3CSVData } from '~/ui/hooks/d3-react'
 import { AxisBottom } from './axis-bottom'
 import { AxisLeft } from './axis-left'
@@ -15,34 +15,33 @@ const innerHeight = height - margin.top - margin.bottom
 const xAxisLabelOffset = 50
 const yAxisLabelOffset = 45
 
-interface Iris {
-  petal_length: string | number
-  petal_width: string | number
-  sepal_length: string | number
-  sepal_width: string | number
+interface TemperatureByWeek {
+  temperature: string | number
+  timestamp: string | number | Date
 }
 
-export const IrisScatterPlot = () => {
-  const transformData = (d: Iris) => ({
-    petal_length: +d.petal_length,
-    petal_width: +d.petal_width,
-    sepal_length: +d.sepal_length,
-    sepal_width: +d.sepal_width
+export const LineChartTemperature = () => {
+  const transformData = (d: TemperatureByWeek) => ({
+    ...d,
+    temperature: +d.temperature,
+    timestamp: new Date(d.timestamp)
   })
 
-  const data = useD3CSVData(IRIS_URL, transformData)
+  const data = useD3CSVData(WEEK_TEMPERATURE_URL, transformData) || null
 
   if (!data) return <pre>Loading Iris...</pre>
 
-  const xValue = (d: { petal_length: number }) => d.petal_length
-  const xAxisLabel = 'Petal Length'
+  const xAxisTickFormat = timeFormat('%a');
 
-  const yValue = (d: { sepal_width: number }) => d.sepal_width
-  const yAxisLabel = 'Sepal Width'
+  const xValue = d => d.timestamp
+  const xAxisLabel = 'Time'
 
-  const xScale = scaleLinear().domain(extent(data, xValue)).range([0, innerWidth]).nice()
+  const yValue = d => d.temperature
+  const yAxisLabel = 'Temperature'
 
-  const yScale = scaleLinear().domain(extent(data, yValue)).range([0, innerHeight])
+  const xScale = scaleTime().domain(extent(data, xValue)).range([0, innerWidth]).nice()
+
+  const yScale = scaleLinear().domain(extent(data, yValue)).range([innerHeight, 0 ]).nice()
 
   return (
     <svg width={width} height={height}>
@@ -50,6 +49,7 @@ export const IrisScatterPlot = () => {
         <AxisBottom
           xScale={xScale}
           innerHeight={innerHeight}
+          tickFormat={xAxisTickFormat}
           tickOffset={7}
         />
         <text
@@ -59,7 +59,7 @@ export const IrisScatterPlot = () => {
         >
           {yAxisLabel}
         </text>
-        <AxisLeft yScale={yScale} innerWidth={innerWidth} tickOffset={12} />{' '}
+        <AxisLeft yScale={yScale} innerWidth={innerWidth} tickOffset={7} />{' '}
         <text
           className="axis-label"
           x={innerWidth / 2}
@@ -74,7 +74,8 @@ export const IrisScatterPlot = () => {
           yScale={yScale}
           xValue={xValue}
           yValue={yValue}
-          circleRadius={8}
+          circleRadius={4}
+          toolTipFormat={xAxisTickFormat}
         />
       </g>
     </svg>
