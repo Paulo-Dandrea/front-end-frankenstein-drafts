@@ -46,6 +46,24 @@ export const GlobalStyle = createGlobalStyle`
 
   }  
 
+  .map-marks .land{
+    fill: #6BBBA1;
+  }
+
+  .map-marks .interiors{
+    fill: none;
+    stroke:#86e5c6;
+    stroke-width: .08rem;
+  }
+
+  .map-marks .sphere{
+    fill: #f1f1f1
+  }
+  .map-marks .graticules{
+    fill: none;
+    stroke:  #c0c0bb30;
+  }
+
 
 
  /* @font-face {

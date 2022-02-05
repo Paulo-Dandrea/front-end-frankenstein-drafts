@@ -28,7 +28,6 @@ export const VegMenu = () => {
 
   useEffect(() => {
     if (data && d3svg.current) {
-      console.log(data)
       let svg = d3
         .select(d3svg.current)
 
