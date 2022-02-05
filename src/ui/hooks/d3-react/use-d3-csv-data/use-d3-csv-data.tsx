@@ -6,8 +6,6 @@ export const useD3CSVData = (url: string, transformRow?: any) => {
 
   useEffect(() => {
     csv(url, transformRow).then(data => {
-      console.log(data);
-      
       setData(data)
     })
   }, [])
